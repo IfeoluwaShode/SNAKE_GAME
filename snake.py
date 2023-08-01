@@ -30,6 +30,13 @@ class Snake:
             self.snake_list[num].goto(new_x, new_y)
         self.head.forward(20)
 
+    def reset(self):
+        for snake in self.snake_list:
+            snake.goto(1000, 1000)
+        self.snake_list.clear()
+        self.create_snake()
+        self.head = self.snake_list[0]
+
     def move_up(self):
         if self.head.heading() != 270:
             self.head.seth(90)

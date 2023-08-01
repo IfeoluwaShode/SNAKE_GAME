@@ -32,13 +32,13 @@ while game_on:
 
     # DETECTS WHEN GAME ENDS
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_on = False
-        score.game_over()
+        score.reset()
+        snake.reset()
 
     # DETECTS WHEN SNAKE HEAD TOUCH TAIL
     for index in range(1, len(snake.snake_list)-1):
         if snake.head.distance(snake.snake_list[index]) < 10:
-            game_on = False
-            score.game_over()
+            score.reset()
+            snake.reset()
 
 screen.exitonclick()
